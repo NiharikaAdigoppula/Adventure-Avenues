@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Website</title>
+    <link rel="stylesheet" href="Loginstyles.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">Adventure Avenues</h2>
+    </header>
+
+    <div class="warpper">
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form onsubmit="return validateForm()">
+                <div class="input-box">
+                  <span class="icon"></span>
+                  <input type="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                  <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="index.html">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="index.html" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            
+            // User credentials
+            var user1 = {
+                email: "niharika@gmail.com",
+                password: "12345678"
+            };
+
+            var user2 = {
+                email: "user2@example.com",
+                password: "password2"
+            };
+
+            if ((email === user1.email && password === user1.password) || 
+                (email === user2.email && password === user2.password)) {
+                window.location.href = "index.html"; // Redirect to the travel website
+                return false; 
+            } else {
+                alert("Invalid email or password");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
